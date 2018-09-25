@@ -4,7 +4,7 @@ var childProcess = require( 'child_process' );
 
 function activate( context )
 {
-    var outputChannel = vscode.workspace.getConfiguration( 'mermaid-export' ).debug ? vscode.window.createOutputChannel( "Mermaid Export" ) : undefined;
+    var outputChannel = vscode.workspace.getConfiguration( 'mermaid-export' ).get( 'debug', false ) ? vscode.window.createOutputChannel( "mermaid-export" ) : undefined;
 
     function debug( text )
     {
@@ -20,6 +20,8 @@ function activate( context )
         return path.join( path.dirname( filename ), newFileName );
     }
 
+    debug( "Mermaid Export ready" );
+
     context.subscriptions.push( vscode.commands.registerCommand( 'mermaid-export.export', function()
     {
         var config = vscode.workspace.getConfiguration( 'mermaid-export' );
@@ -28,12 +30,21 @@ function activate( context )
         {
             var filename = editor.document.uri.fsPath;
             var outputFilename = replaceExtension( filename, '.' + config.get( 'outputType' ) );
+
             var command = "./node_modules/.bin/mmdc -t " + config.get( 'theme' );
+
             var configFile = config.get( 'config' );
             if( configFile )
             {
-                command += " -c " + configFile;
+                command += " -c \"" + configFile + "\"";
             }
+
+            var cssFile = config.get( 'css' );
+            if( cssFile )
+            {
+                command += " -C \"" + cssFile + "\"";
+            }
+
             command += " -i \"" + filename + '\"';
             command += " -o \"" + outputFilename + '\"';
 
@@ -60,6 +71,10 @@ function activate( context )
                 {
                     debug( results );
                     console.log( results );
+                }
+                else
+                {
+                    debug( "OK" );
                 }
             } );
         }
