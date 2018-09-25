@@ -1,0 +1,75 @@
+{
+    "name": "mermaid-export",
+    "displayName": "Mermaid Export",
+    "description": "Export mermaid diagrams to image files",
+    "icon": "icon.png",
+    "version": "0.0.1",
+    "publisher": "Gruntfuggly",
+    "repository": "https://github.com/Gruntfuggly/mermaid-export",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "mermaid-export.export",
+                "title": "Mermaid Export: Export"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Mermaid Export",
+            "properties": {
+                "mermaid-export.outputType": {
+                    "type": "string",
+                    "enum": [
+                        "svg",
+                        "png",
+                        "pdf"
+                    ],
+                    "description": "Export format",
+                    "default": "png"
+                },
+                "mermaid-export.theme": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "dark",
+                        "forest",
+                        "neutral"
+                    ],
+                    "markdownDescription": "Colour theme to use",
+                    "default": "default"
+                },
+                "mermaid-export.config": {
+                    "type": "string",
+                    "markdownDescription": "A file containing extra mermaid [configuration options](https://mermaidjs.github.io/mermaidAPI.html)",
+                    "default": ""
+                },
+                "mermaid-export.css": {
+                    "type": "string",
+                    "markdownDescription": "A file containing CSS styling",
+                    "default": ""
+                },
+                "mermaid-export.debug": {
+                    "type": "boolean",
+                    "description": "Enabled output channel for debugging (restart required)",
+                    "default": false
+                }
+            }
+        }
+    },
+    "dependencies": {
+        "mermaid.cli": "^0.5.1"
+    },
+    "devDependencies": {
+        "vscode": "^1.0.0"
+    }
+}
