@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant JPC Tree
+    participant Data Points
+    participant Rules
+    participant Events
+    participant Assets
+    participant CMS Database
+    participant iVENCS Database
+    JPC Tree->>Data Points:Update
+    Data Points->>CMS Database:Store New Data Point
+    Data Points->>GUI:Update Data Log
+    Data Points->>Rules:Trigger Associated Rules
+    Rules->>Rules:Evaluate Rules
+    opt Event Action
+        Rules->>Events:Generate Event
+        Events->>Assets:Fetch Associated Asset Data
+        Assets-->>Events:Asset Data
+        Events->>CMS Database:Store Event
+        Events->>GUI:Update Summaries and Active Events
+    end
+    opt Alarm Action
+        Rules->>iVENCS Database:Generate Alarm
+    end
+    Rules->>CMS Database:Update Rule Stats
