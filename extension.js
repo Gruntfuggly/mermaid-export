@@ -31,27 +31,38 @@ function activate( context )
             var filename = editor.document.uri.fsPath;
             var outputFilename = replaceExtension( filename, '.' + config.get( 'outputType' ) );
 
-            var command = "./node_modules/.bin/mmdc -t " + config.get( 'theme' );
+            var workspaceFolder = vscode.workspace.getWorkspaceFolder( editor.document.uri );
+            var cwd = workspaceFolder ? workspaceFolder.uri.fsPath : "/";
+
+            var command = context.extensionPath + "/node_modules/.bin/mmdc -t " + config.get( 'theme' );
 
             var configFile = config.get( 'config' );
             if( configFile )
             {
+                if( path.isAbsolute( configFile ) === false )
+                {
+                    configFile = path.join( workspaceFolder.uri.fsPath, configFile );
+                }
                 command += " -c \"" + configFile + "\"";
             }
 
             var cssFile = config.get( 'css' );
             if( cssFile )
             {
+                if( path.isAbsolute( cssFile ) === false )
+                {
+                    cssFile = path.join( workspaceFolder.uri.fsPath, cssFile );
+                }
                 command += " -C \"" + cssFile + "\"";
             }
 
             command += " -i \"" + filename + '\"';
             command += " -o \"" + outputFilename + '\"';
 
-            debug( "cwd:" + context.extensionPath );
+            debug( "cwd:" + cwd );
             debug( "command:" + command );
 
-            var process = childProcess.exec( command, { cwd: context.extensionPath } );
+            var process = childProcess.exec( command, { cwd: cwd } );
             var results = "";
 
             process.stdout.on( 'data', function( data )

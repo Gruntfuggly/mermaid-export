@@ -3,7 +3,7 @@
     "displayName": "Mermaid Export",
     "description": "Export mermaid diagrams to image files",
     "icon": "icon.png",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "Gruntfuggly",
     "repository": "https://github.com/Gruntfuggly/mermaid-export",
     "engines": {
@@ -50,12 +50,12 @@
                 },
                 "mermaid-export.config": {
                     "type": "string",
-                    "markdownDescription": "A file containing extra mermaid [configuration options](https://mermaidjs.github.io/mermaidAPI.html)",
+                    "markdownDescription": "A file containing extra mermaid [configuration options](https://mermaidjs.github.io/mermaidAPI.html) - can be absolute, or relative to workspace folder",
                     "default": ""
                 },
                 "mermaid-export.css": {
                     "type": "string",
-                    "markdownDescription": "A file containing CSS styling",
+                    "markdownDescription": "A file containing CSS styling - can be absolute, or relative to workspace folder",
                     "default": ""
                 },
                 "mermaid-export.debug": {

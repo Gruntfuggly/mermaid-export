@@ -18,6 +18,8 @@ Todo:
 | `mermaid-export.css`        |         | CSS styling file                                                                   |
 | `mermaid-export.debug`      | false   | Enable an output channel for debugging                                             |
 
+The paths for the config and css files can be absolute, or relative to the workspace folder.
+
 The configuration file is JSON format, e.g.:
 
 ```json
