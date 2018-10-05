@@ -1,3 +1,8 @@
+# v0.0.4 - 2018-10-05
+- Add some progress indication on the status bar
+- Allow status bar to open debug log
+- Allow width and height to be overridden
+
 # v0.0.3 - 2018-10-03
 - Allow config and css paths to be relative to workspace folder
 

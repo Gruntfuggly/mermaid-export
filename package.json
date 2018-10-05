@@ -3,7 +3,7 @@
     "displayName": "Mermaid Export",
     "description": "Export mermaid diagrams to image files",
     "icon": "icon.png",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "Gruntfuggly",
     "repository": "https://github.com/Gruntfuggly/mermaid-export",
     "engines": {
@@ -40,6 +40,10 @@
             {
                 "command": "mermaid-export.export",
                 "title": "Mermaid Export: Export"
+            },
+            {
+                "command": "mermaid-export.showLog",
+                "title": "Mermaid Export: Show Log"
             }
         ],
         "configuration": {
@@ -66,6 +70,16 @@
                     ],
                     "markdownDescription": "Colour theme to use",
                     "default": "default"
+                },
+                "mermaid-export.outputWidth": {
+                    "type": "integer",
+                    "markdownDescription": "Override the width of the output diagram (set to 0 for automatic sizing)",
+                    "default": 0
+                },
+                "mermaid-export.outputHeight": {
+                    "type": "integer",
+                    "markdownDescription": "Override the height of the output diagram (set to 0 for automatic sizing)",
+                    "default": 0
                 },
                 "mermaid-export.config": {
                     "type": "string",

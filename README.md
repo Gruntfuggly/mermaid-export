@@ -10,13 +10,15 @@ Todo:
 
 ## Configuration
 
-| Setting                     | Default | Function                                                                           |
-|:----------------------------|:--------|:-----------------------------------------------------------------------------------|
-| `mermaid-export.outputType` | png     | Output file type (svg, png or pdf )                                                |
-| `mermaid-export.theme`      | default | Theme for output file (default, dark, forest or neutral)                           |
-| `mermaid-export.config`     |         | Extra configuration options file (see https://mermaidjs.github.io/mermaidAPI.html) |
-| `mermaid-export.css`        |         | CSS styling file                                                                   |
-| `mermaid-export.debug`      | false   | Enable an output channel for debugging                                             |
+| Setting                       | Default | Function                                                                           |
+|:------------------------------|:--------|:-----------------------------------------------------------------------------------|
+| `mermaid-export.outputType`   | png     | Output file type (svg, png or pdf )                                                |
+| `mermaid-export.outputWidth`  | 0       | Override the width of the output diagram (set to 0 for automatic sizing)           |
+| `mermaid-export.outputHeight` | 0       | Override the height of the output diagram (set to 0 for automatic sizing)          |
+| `mermaid-export.theme`        | default | Theme for output file (default, dark, forest or neutral)                           |
+| `mermaid-export.config`       |         | Extra configuration options file (see https://mermaidjs.github.io/mermaidAPI.html) |
+| `mermaid-export.css`          |         | CSS styling file                                                                   |
+| `mermaid-export.debug`        | false   | Enable an output channel for debugging                                             |
 
 The paths for the config and css files can be absolute, or relative to the workspace folder.
 
