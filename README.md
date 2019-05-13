@@ -1,8 +1,10 @@
 # Mermaid Export
 
-Adds a command *Mermaid Export: Export* which calls `mermaid.cli` to convert a Mermaid diagram source file to an image file.
+Adds a command *Mermaid Export: Export* which calls `mermaid.cli` to convert a Mermaid diagram source file to an image file. The command is available from the standard command prompt (Press **F1** or **ctrl+shift+P**, and type *mermaid*).
 
-The source file should just contain mermaid code.
+The image file will be generated alongside the source file, replacing the extension with the extension for the selected output type, with `.png` being the default.
+
+The source file should just contain mermaid code and should be saved before exporting.
 
 Todo:
 
@@ -10,15 +12,15 @@ Todo:
 
 ## Configuration
 
-| Setting                       | Default | Function                                                                           |
-|:------------------------------|:--------|:-----------------------------------------------------------------------------------|
-| `mermaid-export.outputType`   | png     | Output file type (svg, png or pdf )                                                |
-| `mermaid-export.outputWidth`  | 0       | Override the width of the output diagram (set to 0 for automatic sizing)           |
-| `mermaid-export.outputHeight` | 0       | Override the height of the output diagram (set to 0 for automatic sizing)          |
-| `mermaid-export.theme`        | default | Theme for output file (default, dark, forest or neutral)                           |
-| `mermaid-export.config`       |         | Extra configuration options file (see https://mermaidjs.github.io/mermaidAPI.html) |
-| `mermaid-export.css`          |         | CSS styling file                                                                   |
-| `mermaid-export.debug`        | false   | Enable an output channel for debugging                                             |
+| Setting                       | Default | Function                                                                                   |
+|:------------------------------|:--------|:-------------------------------------------------------------------------------------------|
+| `mermaid-export.outputType`   | png     | Output file type (svg, png or pdf )                                                        |
+| `mermaid-export.outputWidth`  | 0       | Override the width of the output diagram (set to 0 for automatic sizing)                   |
+| `mermaid-export.outputHeight` | 0       | Override the height of the output diagram (set to 0 for automatic sizing)                  |
+| `mermaid-export.theme`        | default | Theme for output file (default, dark, forest or neutral)                                   |
+| `mermaid-export.config`       |         | Extra configuration options file (see https://mermaidjs.github.io/mermaidAPI.html)         |
+| `mermaid-export.css`          |         | CSS styling file                                                                           |
+| `mermaid-export.debug`        | false   | Enable an output channel for debugging (**View**->**Output** then select *Mermaid Export*) |
 
 The paths for the config and css files can be absolute, or relative to the workspace folder.
 

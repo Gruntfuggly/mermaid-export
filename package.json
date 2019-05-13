@@ -3,7 +3,7 @@
     "displayName": "Mermaid Export",
     "description": "Export mermaid diagrams to image files",
     "icon": "icon.png",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "Gruntfuggly",
     "repository": "https://github.com/Gruntfuggly/mermaid-export",
     "engines": {
@@ -93,7 +93,7 @@
                 },
                 "mermaid-export.debug": {
                     "type": "boolean",
-                    "description": "Enabled output channel for debugging (restart required)",
+                    "description": "Enable output channel for debugging",
                     "default": false
                 }
             }
@@ -104,5 +104,10 @@
     },
     "devDependencies": {
         "vscode": "^1.0.0"
+    },
+    "__metadata": {
+        "id": "ad521f2a-72b5-40e3-b753-7e074a84f90b",
+        "publisherDisplayName": "Gruntfuggly",
+        "publisherId": "d4906d2e-f2ee-492d-9c7c-02b6160599ec"
     }
 }

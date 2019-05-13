@@ -1,3 +1,7 @@
+# v0.0.5 - 2019-05-13
+- Create debug output channel without needing to reload
+- Extend README.md
+
 # v0.0.4 - 2018-10-05
 - Add some progress indication on the status bar
 - Allow status bar to open debug log

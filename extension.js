@@ -4,7 +4,20 @@ var childProcess = require( 'child_process' );
 
 function activate( context )
 {
-    var outputChannel = vscode.workspace.getConfiguration( 'mermaid-export' ).get( 'debug', false ) ? vscode.window.createOutputChannel( "mermaid-export" ) : undefined;
+    var outputChannel;
+
+    function resetOutputChannel()
+    {
+        if( outputChannel )
+        {
+            outputChannel.dispose();
+            outputChannel = undefined;
+        }
+        if( vscode.workspace.getConfiguration( 'mermaid-export' ).debug === true )
+        {
+            outputChannel = vscode.window.createOutputChannel( "Mermaid Export" );
+        }
+    }
 
     function debug( text )
     {
@@ -124,6 +137,16 @@ function activate( context )
             } );
         }
     } ) );
+
+    context.subscriptions.push( vscode.workspace.onDidChangeConfiguration( function( e )
+    {
+        if( e.affectsConfiguration( "mermaid-export.debug" ) )
+        {
+            resetOutputChannel();
+        }
+    } ) );
+
+    resetOutputChannel();
 }
 
 function deactivate()
