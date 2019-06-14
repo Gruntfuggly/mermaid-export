@@ -17,25 +17,6 @@
     ],
     "main": "./extension",
     "contributes": {
-        "languages": [
-            {
-                "id": "mermaid",
-                "aliases": [
-                    "Mermaid"
-                ],
-                "extensions": [
-                    ".mmd",
-                    ".mermaid"
-                ]
-            }
-        ],
-        "grammars": [
-            {
-                "language": "mermaid",
-                "scopeName": "",
-                "path": "./syntaxes/mermaid.tmLanguage.json"
-            }
-        ],
         "commands": [
             {
                 "command": "mermaid-export.export",
