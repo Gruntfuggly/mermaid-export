@@ -1,3 +1,7 @@
+# v0.0.6 - 2019-06-14
+- Improve installation process
+- Remove flawed attempt at including syntax highlighting
+
 # v0.0.5 - 2019-05-13
 - Create debug output channel without needing to reload
 - Extend README.md

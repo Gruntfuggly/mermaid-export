@@ -3,7 +3,7 @@
     "displayName": "Mermaid Export",
     "description": "Export mermaid diagrams to image files",
     "icon": "icon.png",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "Gruntfuggly",
     "repository": "https://github.com/Gruntfuggly/mermaid-export",
     "engines": {
