@@ -1,6 +1,8 @@
 var vscode = require( 'vscode' );
-var path = require( 'path' );
+
 var childProcess = require( 'child_process' );
+var fs = require( 'fs' );
+var path = require( 'path' );
 
 function activate( context )
 {
@@ -32,8 +34,6 @@ function activate( context )
         var newFileName = path.basename( filename, path.extname( filename ) ) + extension;
         return path.join( path.dirname( filename ), newFileName );
     }
-
-    debug( "Mermaid Export ready" );
 
     var status = vscode.window.createStatusBarItem( vscode.StatusBarAlignment.Left, 0 );
 
@@ -147,6 +147,44 @@ function activate( context )
     } ) );
 
     resetOutputChannel();
+
+    function checkReady()
+    {
+        if( fs.existsSync( command ) === true )
+        {
+            debug( "Mermaid Export ready" );
+        }
+    }
+
+    var command = context.extensionPath + "/node_modules/.bin/mmdc";
+    if( fs.existsSync( command ) !== true )
+    {
+        debug( "Installing mermaid.cli..." );
+        try
+        {
+            var process = childProcess.spawn( "npm", [ "install", "mermaid.cli" ], { cwd: context.extensionPath } );
+            process.stdout.on( 'data', function( data )
+            {
+                debug( data );
+            } );
+            process.stderr.on( 'error', function( error )
+            {
+                debug( data );
+            } );
+            process.on( 'close', function()
+            {
+                checkReady();
+            } );
+        }
+        catch( error )
+        {
+            debug( "Failed to install mermaid.cli" );
+        }
+    }
+    else
+    {
+        checkReady();
+    }
 }
 
 function deactivate()
