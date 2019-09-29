@@ -1,3 +1,6 @@
+# v0.0.7 - 2019-09-29
+- Fix show output log command (always create debug output channel)
+
 # v0.0.6 - 2019-06-14
 - Improve installation process
 - Remove flawed attempt at including syntax highlighting

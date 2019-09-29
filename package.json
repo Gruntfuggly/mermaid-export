@@ -3,7 +3,7 @@
     "displayName": "Mermaid Export",
     "description": "Export mermaid diagrams to image files",
     "icon": "icon.png",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "Gruntfuggly",
     "repository": "https://github.com/Gruntfuggly/mermaid-export",
     "engines": {
@@ -71,11 +71,6 @@
                     "type": "string",
                     "markdownDescription": "A file containing CSS styling - can be absolute, or relative to workspace folder",
                     "default": ""
-                },
-                "mermaid-export.debug": {
-                    "type": "boolean",
-                    "description": "Enable output channel for debugging",
-                    "default": false
                 }
             }
         }

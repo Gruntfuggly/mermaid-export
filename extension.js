@@ -6,20 +6,7 @@ var path = require( 'path' );
 
 function activate( context )
 {
-    var outputChannel;
-
-    function resetOutputChannel()
-    {
-        if( outputChannel )
-        {
-            outputChannel.dispose();
-            outputChannel = undefined;
-        }
-        if( vscode.workspace.getConfiguration( 'mermaid-export' ).debug === true )
-        {
-            outputChannel = vscode.window.createOutputChannel( "Mermaid Export" );
-        }
-    }
+    var outputChannel = vscode.window.createOutputChannel( "Mermaid Export" );
 
     function debug( text )
     {
@@ -137,16 +124,6 @@ function activate( context )
             } );
         }
     } ) );
-
-    context.subscriptions.push( vscode.workspace.onDidChangeConfiguration( function( e )
-    {
-        if( e.affectsConfiguration( "mermaid-export.debug" ) )
-        {
-            resetOutputChannel();
-        }
-    } ) );
-
-    resetOutputChannel();
 
     function checkReady()
     {
