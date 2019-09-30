@@ -20,7 +20,7 @@ Todo:
 | `mermaid-export.outputWidth`  | 0       | Override the width of the output diagram (set to 0 for automatic sizing)           |
 | `mermaid-export.outputHeight` | 0       | Override the height of the output diagram (set to 0 for automatic sizing)          |
 | `mermaid-export.theme`        | default | Theme for output file (default, dark, forest or neutral)                           |
-| `mermaid-export.config`       |         | Extra configuration options file (see https://mermaidjs.github.io/mermaidAPI.html) |
+| `mermaid-export.config`       |         | Extra configuration options file (see https://mermaidjs.github.io/#/mermaidAPI) |
 | `mermaid-export.css`          |         | CSS styling file                                                                   |
 
 The paths for the config and css files can be absolute, or relative to the workspace folder.
