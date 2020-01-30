@@ -14,14 +14,14 @@ Todo:
 
 ## Configuration
 
-| Setting                       | Default | Function                                                                           |
-|:------------------------------|:--------|:-----------------------------------------------------------------------------------|
-| `mermaid-export.outputType`   | png     | Output file type (svg, png or pdf )                                                |
-| `mermaid-export.outputWidth`  | 0       | Override the width of the output diagram (set to 0 for automatic sizing)           |
-| `mermaid-export.outputHeight` | 0       | Override the height of the output diagram (set to 0 for automatic sizing)          |
-| `mermaid-export.theme`        | default | Theme for output file (default, dark, forest or neutral)                           |
-| `mermaid-export.config`       |         | Extra configuration options file (see https://mermaid-js.github.io/mermaid/#/mermaidAPI) |
-| `mermaid-export.css`          |         | CSS styling file                                                                   |
+| Setting                       | Default | Function                                                                                  |
+|:------------------------------|:--------|:------------------------------------------------------------------------------------------|
+| `mermaid-export.outputType`   | png     | Output file type (svg, png or pdf )                                                       |
+| `mermaid-export.outputWidth`  | 0       | Override the width of the output diagram (set to 0 for automatic sizing)                  |
+| `mermaid-export.outputHeight` | 0       | Override the height of the output diagram (set to 0 for automatic sizing)                 |
+| `mermaid-export.theme`        | default | Theme for output file (default, dark, forest or neutral)                                  |
+| `mermaid-export.config`       |         | Extra configuration options file (see <https://mermaid-js.github.io/mermaid/#/mermaidAPI> |
+| `mermaid-export.css`          |         | CSS styling file                                                                          |
 
 The paths for the config and css files can be absolute, or relative to the workspace folder.
 
@@ -46,6 +46,6 @@ The source code is available on GitHub [here](https://github.com/Gruntfuggly/mer
 
 ## Credits
 
-Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from <https://www.flaticon.com/>.
 
 Uses the [mermaid.cli](https://github.com/mermaidjs/mermaid.cli) command line interface package.
