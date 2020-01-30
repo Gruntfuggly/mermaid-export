@@ -1,5 +1,7 @@
 # Mermaid Export Change Log
 
+## v0.0.8 - 2020-01-30
+
 - Fix broken link in README.md (thanks to [Logerfo](https://github.com/Logerfo) and [paulroho](https://github.com/paulroho))
 - Fix markdown lint errors in README.md and CHANGELOG.md
 
